@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>  Calculator </title>
+	<style type="text/css">
+		body{
+			background-color:#ffe0bd;
+			background-image: url(./img.jpg);
+                        background-position: center center;	
+                        background-repeat:repeat;	
+                        background-attachment:fixed;
+		}
+         h1 {
+             color: red;
+             font-family: verdana;
+             font-size: 350%;
+        }
+         h6 {
+             color: red;
+             font-family: verdana;
+             font-size: 100%;
+             font-weight: bold;
+        }
+	</style>
+	<script type="text/javascript">
+		function operator( b, c){
+			var b;
+			var a = b.slice(b.length-1);
+			if(a!='*' && a !='+' && a !='/' && a !='-')
+				return c ;
+			else
+				return '' ;
+		} 
+	</script>
+</head>
+<body align = "center"  >
+ <h1> Calculator</h1>
+ <br>
+ <br>
+     <form name="Calculator">
+        <table border="4  " align="center" title="Calculator">
+     	  <tr> <input type="text" name="input" maxlength="15" size="26"> </tr>
+           <tr>
+           	<td> <input type="button" value="   1   " onclick="Calculator.input.value += '1'"> </td>
+            <td> <input type="button" value="   2   " onclick="Calculator.input.value += '2'"> </td>    
+            <td> <input type="button" value="   3   " onclick="Calculator.input.value += '3'"> </td> 
+            <td> <input type="button" value="   +   " onclick="Calculator.input.value += operator(Calculator.input.value , '+')" > </td>
+           </tr>
+           <tr>
+           	<td> <input type="button" value="   4   " onclick="Calculator.input.value += '4'"> </td>
+            <td> <input type="button" value="   5   " onclick="Calculator.input.value += '5'"> </td>    
+            <td> <input type="button" value="   6   " onclick="Calculator.input.value += '6'"> </td> 
+            <td> <input type="button" value="   -   " onclick="Calculator.input.value += operator(Calculator.input.value , '-')" > </td>      
+           </tr>
+          <tr>
+           	<td> <input type="button" value="   7   " onclick="Calculator.input.value += '7'"> </td>
+            <td> <input type="button" value="   8   " onclick="Calculator.input.value += '8'"> </td>   
+            <td> <input type="button" value="   9   " onclick="Calculator.input.value += '9'"> </td>
+            <td> <input type="button" value="   *   " onclick="Calculator.input.value += operator(Calculator.input.value , '*')"> </td>    
+          </tr>
+           <tr>
+           	<td> <input type="button" value="   0   " onclick="Calculator.input.value += '0'" > </td>   
+            <td> <input type="reset"  value="   C   "  > </td>  
+            <td> <input type="button" value="   =   " onclick="Calculator.input.value = eval(Calculator.input.value)" > </td>  
+            <td> <input type="button" value="   /   " onclick="Calculator.input.value += operator(Calculator.input.value , '/')" > </td>      
+           </tr>
+           <tr>
+           	 <td> <input type="button" value="  <--  " onclick ="Calculator.input.value = Calculator.input.value.slice(0, Calculator.input.value.length - 1)"> </td>
+           </tr>
+        </table>
+     </form>
+    <h6> - By Anurag Saraswat </h6> 
+</body>
+</html>
